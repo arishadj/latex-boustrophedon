@@ -26,9 +26,8 @@ jobs:
             iftex
             geometry
             tools
-            collection-latexrecommended
-            collection-latexextra
-            collection-fontsrecommended
+            lm
+            unicode-data
             archaic
 
       - name: Build package documentation and examples
