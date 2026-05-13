@@ -1,0 +1,29 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\documentclass[12pt]{article}
+\usepackage[margin=2cm]{geometry}
+
+% Type=Any|Archaic|Classical
+% LineWidth=Auto|<dimension> (e.g. 0.85\textwidth)
+% ObscureLetters enables koppa/digamma (and transliteration KA/KO/W)
+% resetDirection=Page|Paragraph (default Page)
+% inLine=True renders only bracketed spans, e.g. normal [mirrored] text
+\usepackage[Type=Classical,ObscureLetters=On]{boustrophidon}
+
+\begin{document}
+
+\section*{Boustrophidon template}
+
+\boustrophidon{ΔΗΜΟΣ ΑΘΗΝΑΙΩΝ \\ ΤΙΜΩΝ ΑΝΔΡΑ ΑΓΑΘΟΝ \\ ΚΑΙ ΣΩΦΡΟΝΑ}
+
+\bigskip
+
+\startBoustrophidon[Type=Archaic]
+ANDRA MOI ENNEPE MOUSA POLYTROPON OS MALA POLLA PLANGCHTHE
+\stopBoustrophidon
+
+\bigskip
+
+Normal text with \boustrophidon[inLine=True]{only [THIS PART] mirrored} inline.
+
+\end{document}
