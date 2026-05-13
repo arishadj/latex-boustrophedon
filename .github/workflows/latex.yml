@@ -14,7 +14,7 @@ jobs:
       - name: Build package documentation and examples
         uses: xu-cheng/texlive-action@v3
         with:
-          texlive_version: 2026
+          texlive_version: latest
           scheme: full
           run: |
             latex -interaction=nonstopmode -halt-on-error boustrophedon.ins
