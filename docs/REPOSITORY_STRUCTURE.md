@@ -3,20 +3,23 @@
 For GitHub, this structure is cleaner than keeping every file flat at the root.
 
 ```text
-boustrophidon/
+boustrophedon/
   README.md
   LICENSE
   CHANGELOG.md
   VERSION
   CITATION.cff
-  boustrophidon.sty
+  boustrophedon.sty
+  boustrophedon.dtx
+  boustrophedon.ins
+  boustrophedon.pdf
   examples/
-    boustrophidon_template.tex
-    boustrophidon_template.pdf
-    boustrophidon_demos.tex
-    boustrophidon_demos.pdf
+    boustrophedon_template.tex
+    boustrophedon_template.pdf
+    boustrophedon_demos.tex
+    boustrophedon_demos.pdf
   docs/
-    RELEASE_NOTES_v1.0.0.md
+    RELEASE_NOTES_v1.1.0.md
     MANIFEST.md
     TEST_MATRIX.md
     PUBLISHING.md
@@ -27,16 +30,16 @@ boustrophidon/
     SECURITY.md
 ```
 
-For the first release, a flat archive is acceptable. For a maintained public repository, moving examples and operational docs into folders will make the project easier to scan.
+For GitHub, keep examples and operational docs in folders so the project is easy to scan. For CTAN, keep the archive layout consistent with `docs/CTAN.md`.
 
-## Suggested First GitHub Commit
+## Suggested GitHub Commit
 
 ```text
-Initial Boustrophidon v1.0.0 release
+Release Boustrophedon v1.1.0
 ```
 
 ## Suggested Release Tag
 
 ```text
-v1.0.0
+v1.1.0
 ```

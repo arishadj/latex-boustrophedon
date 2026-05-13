@@ -1,6 +1,6 @@
-﻿# Boustrophidon (LaTeX)
+﻿# Boustrophedon (LaTeX)
 
-# Boustrophedon LaTeX Package
+## LaTeX Package
 
 **Created by Aris Chatzichristos, PhD**
 
@@ -19,7 +19,7 @@ This method creates a continuous flow of reading, as the reader does not need to
 Reading takes some getting used to, but after a while it becomes surprisingly natural. One may also observe that:
 
 - Capital letters (both in the Latin alphabet and especially in the Greek alphabet) are particularly well-suited to this type of writing, and are much easier to read than lowercase letters (which were developed later in both systems).
-- For example, pairs such as *b* vs *d*, or cases like ὡ vs ὠ in polytonic Greek, can make reading more difficult, as the reader must keep track of the text direction.
+- For example, pairs such as *b* vs *d*, or cases like ὡ vs ὠ in polytonic Greek, can make reading more difficult, as the reader must keep mental track of the text direction.
 - In contrast, capital Greek letters—already in use during the boustrophedon period—have the appropriate symmetry to be read in both directions without ambiguity.
 
 This package brings an ancient writing paradigm into modern digital typography.
@@ -42,7 +42,15 @@ This package brings an ancient writing paradigm into modern digital typography.
 
 ## Installation
 
-Place `boustrophidon.sty` in the same directory as your `.tex` file, or install it in a local TeX tree.
+For quick use, place `boustrophedon.sty` in the same directory as your `.tex` file, or install it in a local TeX tree.
+
+For the documented-source distribution, generate the package file with:
+
+```tex
+latex boustrophedon.ins
+```
+
+This writes `boustrophedon.sty` from `boustrophedon.dtx`.
 
 In TeXStudio, compile with **XeLaTeX**. The demo and template include these magic comments so TeXStudio can pick the right engine automatically:
 
@@ -58,14 +66,14 @@ In TeXStudio, compile with **XeLaTeX**. The demo and template include these magi
 
 ## License
 
-Boustrophidon is distributed under the LaTeX Project Public License, version 1.3c or later. See `LICENSE` and `NOTICE`.
+Boustrophedon is distributed under the LaTeX Project Public License, version 1.3c or later. See `LICENSE` and `NOTICE`.
 
 ## Quick start
 
 ```tex
-\usepackage[Type=Classical,ObscureLetters=On]{boustrophidon}
+\usepackage[Type=Classical,ObscureLetters=On]{boustrophedon}
 
-\boustrophidon{DHMOS ATHNAIWN \\ TIMWN ANDRA AGAQON \\ KAI SWFRONA}
+\boustrophedon{DHMOS ATHNAIWN \\ TIMWN ANDRA AGAQON \\ KAI SWFRONA}
 ```
 
 Supported modes:
@@ -77,7 +85,7 @@ Supported modes:
 ## Main command
 
 ```tex
-\boustrophidon[<keys>]{<text>}
+\boustrophedon[<keys>]{<text>}
 ```
 
 Keys:
@@ -93,8 +101,8 @@ Keys:
 Inline example:
 
 ```tex
-\boustrophidon[inLine=True]{Normal text with [THIS PART] mirrored inline.}
-\boustrophidon[Type=Classical,inLine=True]{A sentence with [DHMOS ATHNAIWN] embedded.}
+\boustrophedon[inLine=True]{Normal text with [THIS PART] mirrored inline.}
+\boustrophedon[Type=Classical,inLine=True]{A sentence with [DHMOS ATHNAIWN] embedded.}
 ```
 
 In inline mode, `[ ... ]` acts as markup and the brackets are not intended as content.
@@ -107,16 +115,17 @@ Deprecated (kept for compatibility):
 ## start/stop form
 
 ```tex
-\startBoustrophidon[Type=Archaic]
+\startBoustrophedon[Type=Archaic]
 ANDRA MOI ENNEPE MOUSA POLYTROPON ...
-\stopBoustrophidon
+\stopBoustrophedon
 ```
 
 ## Demos
 
-- `examples/boustrophidon_demos.tex` -> `examples/boustrophidon_demos.pdf`
-- `examples/boustrophidon_template.tex` -> `examples/boustrophidon_template.pdf`
+- `examples/boustrophedon_demos.tex` -> `examples/boustrophedon_demos.pdf`
+- `examples/boustrophedon_template.tex` -> `examples/boustrophedon_template.pdf`
+- `boustrophedon.dtx` -> `boustrophedon.pdf` package manual
 
-## Toward stable v1
+## Release Status
 
-Before publishing a stable GitHub release, add a license, tag the release, include generated PDFs, and decide whether the package will remain a simple `.sty` distribution or become a CTAN-ready `.dtx`/`.ins` package.
+Boustrophedon v1.1.0 adds CTAN-style `.dtx`/`.ins` packaging, a generated package manual, and GitHub issue templates for bug reports and feature requests.

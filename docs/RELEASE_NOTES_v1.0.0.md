@@ -1,6 +1,6 @@
-# Boustrophidon v1.0.0 Release Notes
+# Boustrophedon v1.0.0 Release Notes
 
-Boustrophidon is a LaTeX package for typesetting text in boustrophedon style:
+Boustrophedon is a LaTeX package for typesetting text in boustrophedon style:
 the direction alternates line by line, and reverse lines mirror the text or
 letterforms.
 
@@ -13,7 +13,7 @@ letterforms.
 - Inline mode:
 
 ```tex
-\boustrophidon[inLine=True]{Normal text with [THIS PART] mirrored inline.}
+\boustrophedon[inLine=True]{Normal text with [THIS PART] mirrored inline.}
 ```
 
 - TeXStudio-ready demo/template files using XeLaTeX magic comments.
@@ -32,10 +32,10 @@ letterforms.
 
 ## Release Contents
 
-- `boustrophidon.sty`
+- `boustrophedon.sty`
 - `README.md`
-- `boustrophidon_demos.tex`
-- `boustrophidon_demos.pdf`
-- `boustrophidon_template.tex`
-- `boustrophidon_template.pdf`
-- Release support documents in this folder.
+- `examples/boustrophedon_demos.tex`
+- `examples/boustrophedon_demos.pdf`
+- `examples/boustrophedon_template.tex`
+- `examples/boustrophedon_template.pdf`
+- Release support documents in `docs/`.

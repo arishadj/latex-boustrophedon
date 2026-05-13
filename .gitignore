@@ -2,6 +2,12 @@
 *.log
 *.out
 *.toc
+*.idx
+*.glo
+*.gls
+*.hd
+*.ilg
+*.ind
 *.synctex.gz
 *.fls
 *.fdb_latexmk

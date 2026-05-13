@@ -1,14 +1,16 @@
 # Contributing
 
-Thank you for helping improve Boustrophidon.
+Thank you for helping improve Boustrophedon.
 
 ## Development Setup
 
 Use XeLaTeX for development and testing:
 
 ```powershell
-xelatex -interaction=nonstopmode -halt-on-error boustrophidon_demos.tex
-xelatex -interaction=nonstopmode -halt-on-error boustrophidon_template.tex
+latex -interaction=nonstopmode -halt-on-error boustrophedon.ins
+xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx
+xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_demos.tex
+xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_template.tex
 ```
 
 ## Before Opening a Pull Request
@@ -21,7 +23,7 @@ xelatex -interaction=nonstopmode -halt-on-error boustrophidon_template.tex
 
 ## Coding Style
 
-- Prefer existing `expl3` patterns already used in `boustrophidon.sty`.
+- Prefer existing `expl3` patterns already used in `boustrophedon.sty`.
 - Keep user-facing keys documented.
 - Preserve backward-compatible aliases unless there is a release note explaining removal.
 

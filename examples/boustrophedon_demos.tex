@@ -3,7 +3,7 @@
 % !TeX encoding = UTF-8
 \documentclass[12pt]{article}
 \usepackage[margin=1.5cm]{geometry}
-\usepackage[Type=Any,ObscureLetters=On,resetDirection=Paragraph]{boustrophidon}
+\usepackage[Type=Any,ObscureLetters=On,resetDirection=Paragraph]{boustrophedon}
 \pagestyle{plain}
 
 \newcommand{\TestTitle}[1]{\par\bigskip\noindent{\Large\bfseries #1}\par\medskip}
@@ -11,35 +11,35 @@
 \newenvironment{OutputBlock}{\par\noindent\textbf{Output}\par\smallskip\begin{quote}}{\end{quote}\medskip\hrule\medskip}
 
 \begin{document}
-\section*{Boustrophidon v1 demos/tests}
+\section*{Boustrophedon v1.1.0 demos/tests}
 
 \TestTitle{1. Default (Any) automatic wrapping}
 \begin{InputBlock}
-\detokenize{\boustrophidon{This is a deliberately long English paragraph intended to force automatic wrapping across multiple lines so that we can verify that odd and even lines alternate correctly without requiring explicit line break commands from the user.}}
+\detokenize{\boustrophedon{This is a deliberately long English paragraph intended to force automatic wrapping across multiple lines so that we can verify that odd and even lines alternate correctly without requiring explicit line break commands from the user.}}
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon{This is a deliberately long English paragraph intended to force automatic wrapping across multiple lines so that we can verify that odd and even lines alternate correctly without requiring explicit line break commands from the user.}
+\boustrophedon{This is a deliberately long English paragraph intended to force automatic wrapping across multiple lines so that we can verify that odd and even lines alternate correctly without requiring explicit line break commands from the user.}
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{2. Any explicit breaks}
 \begin{InputBlock}
-\detokenize{\boustrophidon{First line in normal order \\ Second line should appear reversed \\ Third line normal again}}
+\detokenize{\boustrophedon{First line in normal order \\ Second line should appear reversed \\ Third line normal again}}
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon{First line in normal order \\ Second line should appear reversed \\ Third line normal again}
+\boustrophedon{First line in normal order \\ Second line should appear reversed \\ Third line normal again}
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{2b. Any explicit breaks (no spaces around \string\\)}
 \begin{InputBlock}
-\detokenize{\boustrophidon{First line in normal order\\Second line should appear reversed\\Third line normal again}}
+\detokenize{\boustrophedon{First line in normal order\\Second line should appear reversed\\Third line normal again}}
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon{First line in normal order\\Second line should appear reversed\\Third line normal again}
+\boustrophedon{First line in normal order\\Second line should appear reversed\\Third line normal again}
 \end{minipage}
 \end{OutputBlock}
 
@@ -49,7 +49,7 @@ ANDRA MOI ENNEPE MOUSA POLYTROPON OS MALA POLLA PLANGCHTHE EPEI TROIES IERON PTO
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon[Type=Archaic]{ANDRA MOI ENNEPE MOUSA POLYTROPON OS MALA POLLA PLANGCHTHE EPEI TROIES IERON PTOLIETHRON EPERSE.}
+\boustrophedon[Type=Archaic]{ANDRA MOI ENNEPE MOUSA POLYTROPON OS MALA POLLA PLANGCHTHE EPEI TROIES IERON PTOLIETHRON EPERSE.}
 \end{minipage}
 \end{OutputBlock}
 
@@ -59,7 +59,7 @@ GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon[Type=Archaic]{GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR}
+\boustrophedon[Type=Archaic]{GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR}
 \end{minipage}
 \end{OutputBlock}
 
@@ -69,21 +69,21 @@ GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon[Type=Classical]{ΔΗΜΟΣ ΑΘΗΝΑΙΩΝ ΤΙΜΩΝ ΑΝΔΡΑ ΑΓΑΘΟΝ ΚΑΙ ΣΩΦΡΟΝΑ ΩΣ ΠΟΛΛΑ ΚΑΙ ΔΙΚΑΙΑ ΕΠΡΑΞΕΝ ΥΠΕΡ ΤΗΣ ΠΟΛΕΩΣ ΚΑΙ ΤΩΝ ΠΟΛΙΤΩΝ.}
+\boustrophedon[Type=Classical]{ΔΗΜΟΣ ΑΘΗΝΑΙΩΝ ΤΙΜΩΝ ΑΝΔΡΑ ΑΓΑΘΟΝ ΚΑΙ ΣΩΦΡΟΝΑ ΩΣ ΠΟΛΛΑ ΚΑΙ ΔΙΚΑΙΑ ΕΠΡΑΞΕΝ ΥΠΕΡ ΤΗΣ ΠΟΛΕΩΣ ΚΑΙ ΤΩΝ ΠΟΛΙΤΩΝ.}
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{4b. Classical wider lines (LineWidth=\string\linewidth)}
 \begin{InputBlock}
-\detokenize{\boustrophidon[Type=Classical]{DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA WS POLLA KAI DIKAIA EPRAXEN UPER THS POLEWS KAI TWN POLITWN. DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA.}}\\
-\detokenize{\boustrophidon[Type=Classical,LineWidth=\linewidth]{DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA WS POLLA KAI DIKAIA EPRAXEN UPER THS POLEWS KAI TWN POLITWN. DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA.}}
+\detokenize{\boustrophedon[Type=Classical]{DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA WS POLLA KAI DIKAIA EPRAXEN UPER THS POLEWS KAI TWN POLITWN. DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA.}}\\
+\detokenize{\boustrophedon[Type=Classical,LineWidth=\linewidth]{DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA WS POLLA KAI DIKAIA EPRAXEN UPER THS POLEWS KAI TWN POLITWN. DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA.}}
 \end{InputBlock}
 \begin{OutputBlock}
 \textbf{Auto}\par
-\boustrophidon[Type=Classical]{DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA WS POLLA KAI DIKAIA EPRAXEN UPER THS POLEWS KAI TWN POLITWN. DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA.}
+\boustrophedon[Type=Classical]{DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA WS POLLA KAI DIKAIA EPRAXEN UPER THS POLEWS KAI TWN POLITWN. DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA.}
 \bigskip
 \textbf{LineWidth=\string\linewidth}\par
-\boustrophidon[Type=Classical,LineWidth=\linewidth]{DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA WS POLLA KAI DIKAIA EPRAXEN UPER THS POLEWS KAI TWN POLITWN. DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA.}
+\boustrophedon[Type=Classical,LineWidth=\linewidth]{DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA WS POLLA KAI DIKAIA EPRAXEN UPER THS POLEWS KAI TWN POLITWN. DHMOS ATHNAIWN TIMWN ANDRA AGAQON KAI SWFRONA.}
 \end{OutputBlock}
 
 \TestTitle{4c. Classical wrapping (asymmetric Latin)}
@@ -92,51 +92,51 @@ GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon[Type=Classical]{GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR}
+\boustrophedon[Type=Classical]{GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR GRGRGRPRPR}
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{5. start/stop (Archaic)}
 \begin{InputBlock}
-\string\startBoustrophidon[Type=Archaic] ... \string\stopBoustrophidon
+\string\startBoustrophedon[Type=Archaic] ... \string\stopBoustrophedon
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\startBoustrophidon[Type=Archaic]
+\startBoustrophedon[Type=Archaic]
 ANDRA MOI ENNEPE MOUSA POLYTROPON OS MALA POLLA PLANGCHTHE EPEI TROIES IERON PTOLIETHRON EPERSE.
-\stopBoustrophidon
+\stopBoustrophedon
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{6. start/stop (Classical)}
 \begin{InputBlock}
-\string\startBoustrophidon[Type=Classical] ... \string\stopBoustrophidon
+\string\startBoustrophedon[Type=Classical] ... \string\stopBoustrophedon
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\startBoustrophidon[Type=Classical]
+\startBoustrophedon[Type=Classical]
 ΔΗΜΟΣ ΑΘΗΝΑΙΩΝ ΤΙΜΩΝ ΑΝΔΡΑ ΑΓΑΘΟΝ ΚΑΙ ΣΩΦΡΟΝΑ ΩΣ ΠΟΛΛΑ ΚΑΙ ΔΙΚΑΙΑ ΕΠΡΑΞΕΝ ΥΠΕΡ ΤΗΣ ΠΟΛΕΩΣ ΚΑΙ ΤΩΝ ΠΟΛΙΤΩΝ.
-\stopBoustrophidon
+\stopBoustrophedon
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{7. Greek explicit breaks baseline}
 \begin{InputBlock}
-\detokenize{\boustrophidon[Type=Classical]{ΔΗΜΟΣ ΑΘΗΝΑΙΩΝ \\ ΤΙΜΩΝ ΑΝΔΡΑ ΑΓΑΘΟΝ \\ ΚΑΙ ΣΩΦΡΟΝΑ}}
+\detokenize{\boustrophedon[Type=Classical]{ΔΗΜΟΣ ΑΘΗΝΑΙΩΝ \\ ΤΙΜΩΝ ΑΝΔΡΑ ΑΓΑΘΟΝ \\ ΚΑΙ ΣΩΦΡΟΝΑ}}
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon[Type=Classical]{ΔΗΜΟΣ ΑΘΗΝΑΙΩΝ \\ ΤΙΜΩΝ ΑΝΔΡΑ ΑΓΑΘΟΝ \\ ΚΑΙ ΣΩΦΡΟΝΑ}
+\boustrophedon[Type=Classical]{ΔΗΜΟΣ ΑΘΗΝΑΙΩΝ \\ ΤΙΜΩΝ ΑΝΔΡΑ ΑΓΑΘΟΝ \\ ΚΑΙ ΣΩΦΡΟΝΑ}
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{8. Symbol reversal (Latin input, explicit breaks)}
 \begin{InputBlock}
-\detokenize{\boustrophidon[Type=Classical]{TH PH CH PS KS W KA KO \\ TH PH CH PS KS W KA KO}}
+\detokenize{\boustrophedon[Type=Classical]{TH PH CH PS KS W KA KO \\ TH PH CH PS KS W KA KO}}
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon[Type=Classical]{TH PH CH PS KS W KA KO \\ TH PH CH PS KS W KA KO}
+\boustrophedon[Type=Classical]{TH PH CH PS KS W KA KO \\ TH PH CH PS KS W KA KO}
 \end{minipage}
 \end{OutputBlock}
 
@@ -146,75 +146,75 @@ Direct Unicode codepoints: U+03D8 U+03D9 U+03DC U+03DD
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon[Type=Classical]{ϘϙϜϝ \\ Ϙ ϙ Ϝ ϝ}
+\boustrophedon[Type=Classical]{ϘϙϜϝ \\ Ϙ ϙ Ϝ ϝ}
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{8c. ObscureLetters Off (contrast)}
 \begin{InputBlock}
-\detokenize{\boustrophidon[Type=Classical,ObscureLetters=Off]{TH PH PS KS KA KO}}
+\detokenize{\boustrophedon[Type=Classical,ObscureLetters=Off]{TH PH PS KS KA KO}}
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon[Type=Classical,ObscureLetters=Off]{TH PH PS KS KA KO}
+\boustrophedon[Type=Classical,ObscureLetters=Off]{TH PH PS KS KA KO}
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{9. Asymmetric glyphs (Latin input, explicit breaks)}
 \begin{InputBlock}
-\detokenize{\boustrophidon[Type=Classical]{GRGRGRPRPR \\ GRGRGRPRPR}}
+\detokenize{\boustrophedon[Type=Classical]{GRGRGRPRPR \\ GRGRGRPRPR}}
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon[Type=Classical]{GRGRGRPRPR \\ GRGRGRPRPR}
+\boustrophedon[Type=Classical]{GRGRGRPRPR \\ GRGRGRPRPR}
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{10. Asymmetric glyphs (Archaic, Latin input, explicit breaks)}
 \begin{InputBlock}
-\detokenize{\boustrophidon[Type=Archaic]{GRGRGRPRPR \\ GRGRGRPRPR}}
+\detokenize{\boustrophedon[Type=Archaic]{GRGRGRPRPR \\ GRGRGRPRPR}}
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
-\boustrophidon[Type=Archaic]{GRGRGRPRPR \\ GRGRGRPRPR}
+\boustrophedon[Type=Archaic]{GRGRGRPRPR \\ GRGRGRPRPR}
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{11. resetDirection demo (Page vs Paragraph)}
 \begin{InputBlock}
-\detokenize{\boustrophidon[Type=Any,resetDirection=Page]{AAA \\ BBB \\ CCC}} \\
-\detokenize{\boustrophidon[Type=Any,resetDirection=Page]{DDD \\ EEE \\ FFF}}
+\detokenize{\boustrophedon[Type=Any,resetDirection=Page]{AAA \\ BBB \\ CCC}} \\
+\detokenize{\boustrophedon[Type=Any,resetDirection=Page]{DDD \\ EEE \\ FFF}}
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
 \textbf{resetDirection=Page (continues)}\par
-\boustrophidon[Type=Any,resetDirection=Page]{AAA \\ BBB \\ CCC}
-\boustrophidon[Type=Any,resetDirection=Page]{DDD \\ EEE \\ FFF}
+\boustrophedon[Type=Any,resetDirection=Page]{AAA \\ BBB \\ CCC}
+\boustrophedon[Type=Any,resetDirection=Page]{DDD \\ EEE \\ FFF}
 \end{minipage}
 \end{OutputBlock}
 
 \begin{InputBlock}
-\detokenize{\boustrophidon[Type=Any,resetDirection=Paragraph]{AAA \\ BBB \\ CCC}} \\
-\detokenize{\boustrophidon[Type=Any,resetDirection=Paragraph]{DDD \\ EEE \\ FFF}}
+\detokenize{\boustrophedon[Type=Any,resetDirection=Paragraph]{AAA \\ BBB \\ CCC}} \\
+\detokenize{\boustrophedon[Type=Any,resetDirection=Paragraph]{DDD \\ EEE \\ FFF}}
 \end{InputBlock}
 \begin{OutputBlock}
 \begin{minipage}{0.46\linewidth}
 \textbf{resetDirection=Paragraph (resets)}\par
-\boustrophidon[Type=Any,resetDirection=Paragraph]{AAA \\ BBB \\ CCC}
-\boustrophidon[Type=Any,resetDirection=Paragraph]{DDD \\ EEE \\ FFF}
+\boustrophedon[Type=Any,resetDirection=Paragraph]{AAA \\ BBB \\ CCC}
+\boustrophedon[Type=Any,resetDirection=Paragraph]{DDD \\ EEE \\ FFF}
 \end{minipage}
 \end{OutputBlock}
 
 \TestTitle{12. inLine=True inside normal text}
 \begin{InputBlock}
 \detokenize{Normal text with [THIS PART MIRRORED] only, then [KAI TOYTO] too.}\\
-\detokenize{\boustrophidon[inLine=True]{Normal text with [THIS PART MIRRORED] only, then [KAI TOYTO] too.}}\\
-\detokenize{\boustrophidon[Type=Classical,inLine=True]{A normal sentence with [DHMOS ATHNAIWN] embedded.}}
+\detokenize{\boustrophedon[inLine=True]{Normal text with [THIS PART MIRRORED] only, then [KAI TOYTO] too.}}\\
+\detokenize{\boustrophedon[Type=Classical,inLine=True]{A normal sentence with [DHMOS ATHNAIWN] embedded.}}
 \end{InputBlock}
 \begin{OutputBlock}
 Normal text with [THIS PART MIRRORED] only, then [KAI TOYTO] too.\par\medskip
-\boustrophidon[inLine=True]{Normal text with [THIS PART MIRRORED] only, then [KAI TOYTO] too.}\par\medskip
-\boustrophidon[Type=Classical,inLine=True]{A normal sentence with [DHMOS ATHNAIWN] embedded.}
+\boustrophedon[inLine=True]{Normal text with [THIS PART MIRRORED] only, then [KAI TOYTO] too.}\par\medskip
+\boustrophedon[Type=Classical,inLine=True]{A normal sentence with [DHMOS ATHNAIWN] embedded.}
 \end{OutputBlock}
 
 \end{document}

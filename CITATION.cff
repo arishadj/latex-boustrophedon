@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-message: "If you use Boustrophidon in scholarly work, please cite it using this metadata."
-title: "Boustrophidon: A LaTeX package for boustrophedon typography"
-version: "1.0.0"
+message: "If you use Boustrophedon in scholarly work, please cite it using this metadata."
+title: "Boustrophedon: A LaTeX package for boustrophedon typography"
+version: "1.1.0"
 date-released: "2026-05-13"
 type: software
 authors:
   - family-names: "Chatzichristos"
     given-names: "Aris"
-abstract: "Boustrophidon is a LaTeX package for typesetting text in boustrophedon style, with generic mirrored text, Archaic and Classical Greek rendering, automatic wrapping, explicit line breaks, and inline bracketed spans."
+abstract: "Boustrophedon is a LaTeX package for typesetting text in boustrophedon style, with generic mirrored text, Archaic and Classical Greek rendering, automatic wrapping, explicit line breaks, and inline bracketed spans."
 license: "LPPL-1.3c"
-repository-code: "https://github.com/arishadj/latex-boustrophidon"
+repository-code: "https://github.com/arishadj/latex-boustrophedon"

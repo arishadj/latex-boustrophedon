@@ -1,0 +1,56 @@
+name: Bug report
+description: Report a problem with Boustrophedon output, installation, or compilation.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. A minimal `.tex` example and log excerpt help most.
+  - type: input
+    id: engine
+    attributes:
+      label: LaTeX engine and version
+      description: Example: XeLaTeX 0.999997, LuaLaTeX 1.18, pdfLaTeX 1.40.
+      placeholder: XeLaTeX ...
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system and TeX distribution
+      placeholder: Windows 11 + MiKTeX, macOS + MacTeX, Linux + TeX Live
+    validations:
+      required: true
+  - type: textarea
+    id: minimal-example
+    attributes:
+      label: Minimal LaTeX example
+      description: Paste the smallest document that reproduces the issue.
+      render: tex
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Relevant log excerpt
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-report checks
+      options:
+        - label: I tested with XeLaTeX or LuaLaTeX when using Greek Unicode input.
+        - label: I checked the README for the documented keys and examples.

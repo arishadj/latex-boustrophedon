@@ -1,5 +1,163 @@
+﻿% \iffalse meta-comment
+%
+% Copyright (c) 2026 Aris Chatzichristos, PhD
+%
+% This work may be distributed and/or modified under the conditions of
+% the LaTeX Project Public License, either version 1.3c of this license
+% or, at your option, any later version.
+%
+% This work has the LPPL maintenance status "maintained".
+%
+% The Current Maintainer of this work is Aris Chatzichristos.
+%
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{fontspec}
+\IfFontExistsTF{Segoe UI}
+  {\setmonofont{Segoe UI}[Scale=MatchLowercase]}
+  {
+    \IfFontExistsTF{DejaVu Sans Mono}
+      {\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]}
+      {
+        \IfFontExistsTF{Noto Sans Mono}
+          {\setmonofont{Noto Sans Mono}[Scale=MatchLowercase]}
+          {}
+      }
+  }
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{boustrophedon.dtx}
+  \PrintIndex
+\end{document}
+%</driver>
+% \fi
+%
+% \GetFileInfo{boustrophedon.sty}
+%
+% \title{The \textsf{boustrophedon} package}
+% \author{Aris Chatzichristos, PhD}
+% \date{Version 1.1, 2026-05-13}
+% \maketitle
+%
+% \begin{abstract}
+% \textsf{boustrophedon} typesets text in boustrophedon style, alternating
+% writing direction line by line. It supports generic mirrored text, Archaic
+% and Classical Greek glyph rendering, automatic wrapping, explicit line
+% breaks, and inline bracketed spans.
+% \end{abstract}
+%
+% \section{Overview}
+%
+% This package typesets text in \emph{boustrophedon} style, alternating the
+% writing direction on each line.
+%
+% Have you ever wondered why most Western languages are written left-to-right,
+% while many Middle Eastern languages are written right-to-left? Both
+% conventions may seem arbitrary today---but this was not always the case.
+%
+% In one of the earliest fully developed alphabets, the Archaic Greek alphabet
+% (from \emph{alpha} and \emph{beta}, hence ``alphabet''), writing was often
+% performed \emph{boustrophedon}, meaning ``as the ox turns in ploughing.''
+% Text was written left-to-right on one line, then right-to-left on the next,
+% with both the direction of the text \emph{and the letterforms themselves}
+% mirrored accordingly.
+%
+% This method creates a continuous flow of reading, as the reader does not need
+% to jump back to the start of each new line, but instead follows the text in a
+% natural back-and-forth motion.
+%
+% Reading takes some getting used to, but after a while it becomes surprisingly
+% natural. One may also observe that:
+%
+% \begin{itemize}
+%   \item Capital letters (both in the Latin alphabet and especially in the
+%   Greek alphabet) are particularly well-suited to this type of writing, and
+%   are much easier to read than lowercase letters (which were developed later
+%   in both systems).
+%   \item For example, pairs such as \emph{b} vs \emph{d}, or comparable
+%   look-alikes in polytonic Greek, can make reading more difficult, as the
+%   reader must keep mental track of the text direction.
+%   \item In contrast, capital Greek letters---already in use during the
+%   boustrophedon period---have the appropriate symmetry to be read in both
+%   directions without ambiguity.
+% \end{itemize}
+%
+% This package brings an ancient writing paradigm into modern digital
+% typography.
+%
+% \section{Installation}
+%
+% To generate the package file from this documented source, run:
+%
+% \begin{verbatim}
+% latex boustrophedon.ins
+% \end{verbatim}
+%
+% This produces \texttt{boustrophedon.sty}. Place it beside your document or
+% install it in a TeX tree searched by your distribution.
+%
+% \section{Requirements}
+%
+% XeLaTeX or LuaLaTeX is recommended, especially for Greek Unicode input. The
+% package requires \texttt{xparse}, \texttt{expl3}, \texttt{graphicx},
+% \texttt{iftex}, \texttt{greek6cbc}, and \texttt{greek4cbc}.
+%
+% \section{Usage}
+%
+% The main command is:
+%
+% \begin{verbatim}
+% \boustrophedon[<keys>]{<text>}
+% \end{verbatim}
+%
+% Important keys are:
+% \begin{itemize}
+%   \item \texttt{Type=Any}, \texttt{Type=Archaic}, or \texttt{Type=Classical}
+%   \item \texttt{start=LTR} or \texttt{start=RTL}
+%   \item \texttt{resetDirection=Page} or \texttt{resetDirection=Paragraph}
+%   \item \texttt{LineWidth=Auto} or an explicit dimension
+%   \item \texttt{ObscureLetters=On} or \texttt{ObscureLetters=Off}
+%   \item \texttt{inLine=True} or \texttt{inLine=False}
+% \end{itemize}
+%
+% Inline mode keeps surrounding text normal and transforms only bracketed spans:
+%
+% \begin{verbatim}
+% \boustrophedon[inLine=True]{Normal text with [THIS PART] mirrored inline.}
+% \boustrophedon[Type=Classical,inLine=True]{A sentence with [DHMOS ATHNAIWN].}
+% \end{verbatim}
+%
+% The start/stop form is also available:
+%
+% \begin{verbatim}
+% \startBoustrophedon[Type=Archaic]
+% ANDRA MOI ENNEPE MOUSA POLYTROPON ...
+% \stopBoustrophedon
+% \end{verbatim}
+%
+% \section{Examples}
+%
+% See \texttt{examples/boustrophedon\_template.tex} for a minimal starter and
+% \texttt{examples/boustrophedon\_demos.tex} for the full demonstration and
+% regression document.
+%
+% \section{License and maintenance}
+%
+% This work is distributed under the LaTeX Project Public License, version 1.3c
+% or later. The work has LPPL maintenance status ``maintained''. The Current
+% Maintainer is Aris Chatzichristos.
+%
+% \StopEventually{\PrintChanges}
+%
+% \section{Implementation}
+%
+%    \begin{macrocode}
+%<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{boustrophidon}[2026/05/13 v1.0 Unified renderer]
+\ProvidesPackage{boustrophedon}[2026/05/13 v1.1 Documented source distribution]
 
 \RequirePackage{xparse}
 \RequirePackage{expl3}
@@ -729,7 +887,7 @@
   }
 
 % --------------------------------------------------------------------------
-% Inline markup: normal text outside [ ... ], boustrophidon only inside.
+% Inline markup: normal text outside [ ... ], boustrophedon only inside.
 % The square brackets are markup delimiters and are not printed.
 % --------------------------------------------------------------------------
 \cs_new_protected:Npn \boustro_render_inline:nn #1#2
@@ -772,7 +930,7 @@
 % --------------------------------------------------------------------------
 % Public API (single command)
 % --------------------------------------------------------------------------
-\NewDocumentCommand{\boustrophidon}{ O{} +m }
+\NewDocumentCommand{\boustrophedon}{ O{} +m }
   {
     \group_begin:
       \keys_set:nn { boustro } {#1}
@@ -784,19 +942,19 @@
 
 % Convenience aliases (v0.76 compatibility)
 \NewDocumentCommand{\boustrophedonAny}{+m}
-  { \boustrophidon[Type=Any]{#1} }
+  { \boustrophedon[Type=Any]{#1} }
 \NewDocumentCommand{\boustrophedonArchaic}{+m}
-  { \boustrophidon[Type=Archaic]{#1} }
+  { \boustrophedon[Type=Archaic]{#1} }
 \NewDocumentCommand{\boustrophedonClassical}{+m}
-  { \boustrophidon[Type=Classical]{#1} }
+  { \boustrophedon[Type=Classical]{#1} }
 
 % Block style API with start/stop commands (single command, optional [keys])
 \makeatletter
-\def\startBoustrophidon{%
+\def\startBoustrophedon{%
   \@ifnextchar[{\boustro_start_with_keys@}{\boustro_start_with_keys@[]}%
 }
-\long\def\boustro_start_with_keys@[#1]#2\stopBoustrophidon{%
-  \boustrophidon[#1]{#2}%
+\long\def\boustro_start_with_keys@[#1]#2\stopBoustrophedon{%
+  \boustrophedon[#1]{#2}%
 }
 \makeatother
 
@@ -812,8 +970,14 @@
 % --------------------------------------------------------------------------
 \AtBeginDocument{
   \ifPDFTeX
-    \PackageWarningNoLine{boustrophidon}{Greek Unicode input works best with XeLaTeX or LuaLaTeX; transliteration input is still fine in pdfLaTeX}
+    \PackageWarningNoLine{boustrophedon}{Greek Unicode input works best with XeLaTeX or LuaLaTeX; transliteration input is still fine in pdfLaTeX}
   \fi
 }
 
 \ExplSyntaxOff
+
+%</package>
+%    \end{macrocode}
+% \Finale
+
+

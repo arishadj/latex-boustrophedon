@@ -1,11 +1,12 @@
 # Security Policy
 
-Boustrophidon is a LaTeX package and does not intentionally execute external commands.
+Boustrophedon is a LaTeX package and does not intentionally execute external commands.
 
 ## Supported Versions
 
 | Version | Supported |
 | --- | --- |
+| 1.1.x | Yes |
 | 1.0.x | Yes |
 
 ## Reporting a Concern

@@ -6,8 +6,10 @@ Use this checklist before tagging a release.
 
 | File | Engine | Expected result | Status |
 | --- | --- | --- | --- |
-| `boustrophidon_demos.tex` | XeLaTeX | PDF builds, 6 pages | Passed 2026-05-13 |
-| `boustrophidon_template.tex` | XeLaTeX | PDF builds, 1 page | Passed 2026-05-13 |
+| `boustrophedon.ins` | LaTeX | Generates `boustrophedon.sty` | Passed 2026-05-13 |
+| `boustrophedon.dtx` | XeLaTeX | Manual PDF builds, 15 pages | Passed 2026-05-13 |
+| `examples/boustrophedon_demos.tex` | XeLaTeX | PDF builds, 6 pages | Passed 2026-05-13 |
+| `examples/boustrophedon_template.tex` | XeLaTeX | PDF builds, 1 page | Passed 2026-05-13 |
 
 ## Feature Tests
 

@@ -1,16 +1,19 @@
 # Manifest
 
-This folder contains the proposed Boustrophidon v1 release package.
+This file describes the Boustrophedon release package.
 
 ## Core Package
 
-- `boustrophidon.sty` - LaTeX package source.
+- `boustrophedon.sty` - LaTeX package file.
+- `boustrophedon.dtx` - Documented source for CTAN-style distribution.
+- `boustrophedon.ins` - Docstrip installer that generates `boustrophedon.sty`.
 
 ## Documentation
 
 - `README.md` - Main user documentation.
+- `boustrophedon.pdf` - Package manual generated from `boustrophedon.dtx`.
 - `CHANGELOG.md` - Version history.
-- `RELEASE_NOTES_v1.0.0.md` - Human-readable release summary.
+- `RELEASE_NOTES_v1.1.0.md` - Human-readable release summary.
 - `LICENSE` - License declaration.
 - `NOTICE` - Package copyright, maintainer, and LPPL status.
 - `CONTRIBUTING.md` - Contribution guidelines.
@@ -18,10 +21,10 @@ This folder contains the proposed Boustrophidon v1 release package.
 
 ## Examples
 
-- `boustrophidon_template.tex` - Minimal starter template.
-- `boustrophidon_template.pdf` - Compiled template.
-- `boustrophidon_demos.tex` - Full demo/test document.
-- `boustrophidon_demos.pdf` - Compiled demo output.
+- `examples/boustrophedon_template.tex` - Minimal starter template.
+- `examples/boustrophedon_template.pdf` - Compiled template.
+- `examples/boustrophedon_demos.tex` - Full demo/test document.
+- `examples/boustrophedon_demos.pdf` - Compiled demo output.
 
 ## Release Operations
 
@@ -35,5 +38,16 @@ The following generated files should not be included in release archives:
 
 - `*.aux`
 - `*.log`
+- `*.out`
+- `*.toc`
+- `*.idx`
+- `*.ilg`
+- `*.ind`
+- `*.glo`
+- `*.gls`
+- `*.hd`
+- `*.xdv`
+- `*.fls`
+- `*.fdb_latexmk`
 - `*.synctex.gz`
 - temporary render images

@@ -16,8 +16,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-extra
 
+      - name: Generate package from docstrip installer
+        run: latex -interaction=nonstopmode -halt-on-error boustrophedon.ins
+
+      - name: Build package manual
+        run: xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx
+
       - name: Build demo
-        run: xelatex -interaction=nonstopmode -halt-on-error examples/boustrophidon_demos.tex
+        run: xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_demos.tex
 
       - name: Build template
-        run: xelatex -interaction=nonstopmode -halt-on-error examples/boustrophidon_template.tex
+        run: xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_template.tex

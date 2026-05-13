@@ -1,0 +1,39 @@
+name: Feature request
+description: Suggest an improvement or new Boustrophedon capability.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the workflow, typography case, or publication need.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: What should Boustrophedon do?
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Example input/output
+      description: A short `.tex` snippet or visual description is useful.
+      render: tex
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Rendering
+        - Greek transliteration
+        - Unicode Greek
+        - Inline mode
+        - Documentation
+        - Packaging/CTAN
+        - Other
+    validations:
+      required: true
