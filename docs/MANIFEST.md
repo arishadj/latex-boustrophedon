@@ -2,7 +2,7 @@
 
 This file describes the Boustrophedon release package.
 
-## Core Package
+## Repository and GitHub Release
 
 - `boustrophedon.sty` - LaTeX package file.
 - `boustrophedon.dtx` - Documented source for CTAN-style distribution.
@@ -26,6 +26,24 @@ This file describes the Boustrophedon release package.
 - `examples/boustrophedon_demos.tex` - Full demo/test document.
 - `examples/boustrophedon_demos.pdf` - Compiled demo output.
 
+## CTAN Upload
+
+The CTAN upload archive should include the source files and manual, but not
+generated package or example output files:
+
+- `README.md`
+- `LICENSE`
+- `NOTICE`
+- `CHANGELOG.md`
+- `boustrophedon.dtx`
+- `boustrophedon.ins`
+- `boustrophedon.pdf`
+- `examples/boustrophedon_template.tex`
+- `examples/boustrophedon_demos.tex`
+
+Do not include `boustrophedon.sty` in the CTAN upload archive; it is generated
+from `boustrophedon.dtx` by `boustrophedon.ins`.
+
 ## Release Operations
 
 - `TEST_MATRIX.md` - Manual and compile test checklist.
@@ -34,7 +52,7 @@ This file describes the Boustrophedon release package.
 
 ## Not Included
 
-The following generated files should not be included in release archives:
+The following temporary build files should not be included in release archives:
 
 - `*.aux`
 - `*.log`

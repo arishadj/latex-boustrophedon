@@ -13,23 +13,35 @@ CTAN is the long-term publication route for a LaTeX package. GitHub can host the
 - Add a maintainer email or contact URL.
 - Use the `.dtx`/`.ins` documented-source files for a conventional CTAN package structure.
 
-## Minimal CTAN-Oriented Archive
+## Minimal CTAN Upload Archive
+
+CTAN prefers a browsing-friendly source archive. Because this package uses
+`.dtx`/`.ins`, the CTAN upload should not include generated package files such
+as `boustrophedon.sty`, or generated example PDFs. The package manual PDF is
+included because it is the user-facing documentation.
 
 ```text
 boustrophedon/
   README.md
   LICENSE
   NOTICE
+  CHANGELOG.md
   boustrophedon.dtx
   boustrophedon.ins
-  boustrophedon.sty
   boustrophedon.pdf
   examples/
     boustrophedon_demos.tex
-    boustrophedon_demos.pdf
     boustrophedon_template.tex
-    boustrophedon_template.pdf
-  CHANGELOG.md
+```
+
+## GitHub Release Bundle
+
+The GitHub release may additionally include convenience/generated files:
+
+```text
+boustrophedon.sty
+examples/boustrophedon_demos.pdf
+examples/boustrophedon_template.pdf
 ```
 
 ## CTAN Upload Metadata Draft
@@ -38,6 +50,8 @@ boustrophedon/
 - Caption: Typeset boustrophedon text in LaTeX
 - License: LPPL 1.3c or later
 - Author/Maintainer: Aris Chatzichristos
+- Repository: `https://github.com/arishadj/latex-boustrophedon`
+- Bug tracker: `https://github.com/arishadj/latex-boustrophedon/issues`
 - Topics: Greek, fonts, text direction, typography
 - Summary:
 

@@ -61,11 +61,12 @@ git push origin v1.1.0
 
 Use `RELEASE_NOTES_v1.1.0.md` as the release body.
 
-Attach a release zip containing:
+Attach or verify a GitHub release bundle containing:
 
 - `boustrophedon.sty`
 - `README.md`
 - `LICENSE`
+- `NOTICE`
 - `CHANGELOG.md`
 - `boustrophedon.dtx`
 - `boustrophedon.ins`
@@ -75,3 +76,24 @@ Attach a release zip containing:
 ## 6. After GitHub Release
 
 Open a fresh clone/download of the release archive and compile the examples once more. This catches missing files before wider publication.
+
+## 7. Prepare CTAN Upload
+
+Prepare a separate CTAN archive without generated package files or generated
+example PDFs:
+
+```text
+boustrophedon/
+  README.md
+  LICENSE
+  NOTICE
+  CHANGELOG.md
+  boustrophedon.dtx
+  boustrophedon.ins
+  boustrophedon.pdf
+  examples/
+    boustrophedon_demos.tex
+    boustrophedon_template.tex
+```
+
+Test the CTAN archive from a fresh temporary directory before uploading.

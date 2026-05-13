@@ -40,4 +40,13 @@ Use this checklist for each release pass.
 
 - [ ] Download the GitHub release archive.
 - [ ] Compile examples from the downloaded archive.
-- [ ] Decide whether the next target is CTAN, Overleaf Gallery, or both.
+
+## CTAN
+
+- [ ] CTAN archive contains source/manual files only.
+- [ ] CTAN archive excludes `boustrophedon.sty`.
+- [ ] CTAN archive excludes generated example PDFs.
+- [ ] CTAN archive extracts into a single top-level `boustrophedon/` folder.
+- [ ] CTAN archive tested from a fresh temporary directory.
+- [ ] CTAN upload metadata includes repository and issue tracker URLs.
+- [ ] Decide whether the next target is Overleaf Gallery.

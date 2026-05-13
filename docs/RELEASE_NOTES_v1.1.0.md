@@ -28,7 +28,7 @@ publication workflows.
 - `xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_demos.tex`
 - `xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_template.tex`
 
-## Release Contents
+## GitHub Release Contents
 
 - `boustrophedon.dtx`
 - `boustrophedon.ins`
@@ -43,3 +43,19 @@ publication workflows.
 - `examples/boustrophedon_template.tex`
 - `examples/boustrophedon_template.pdf`
 - Release support documents in `docs/`.
+
+## CTAN Upload Contents
+
+The CTAN upload archive should include:
+
+- `README.md`
+- `LICENSE`
+- `NOTICE`
+- `CHANGELOG.md`
+- `boustrophedon.dtx`
+- `boustrophedon.ins`
+- `boustrophedon.pdf`
+- `examples/boustrophedon_demos.tex`
+- `examples/boustrophedon_template.tex`
+
+It should not include generated `boustrophedon.sty` or generated example PDFs.
