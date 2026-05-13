@@ -27,8 +27,16 @@ jobs:
 
       - name: Build demo
         working-directory: examples
-        run: xelatex -interaction=nonstopmode -halt-on-error boustrophedon_demos.tex
+        run: |
+          xelatex -interaction=nonstopmode -halt-on-error boustrophedon_demos.tex || {
+            cat boustrophedon_demos.log
+            exit 1
+          }
 
       - name: Build template
         working-directory: examples
-        run: xelatex -interaction=nonstopmode -halt-on-error boustrophedon_template.tex
+        run: |
+          xelatex -interaction=nonstopmode -halt-on-error boustrophedon_template.tex || {
+            cat boustrophedon_template.log
+            exit 1
+          }
