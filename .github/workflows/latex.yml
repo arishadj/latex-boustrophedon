@@ -22,8 +22,13 @@ jobs:
       - name: Build package manual
         run: xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx
 
+      - name: Prepare example builds
+        run: cp boustrophedon.sty examples/
+
       - name: Build demo
-        run: TEXINPUTS=".:$GITHUB_WORKSPACE//:" xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_demos.tex
+        working-directory: examples
+        run: xelatex -interaction=nonstopmode -halt-on-error boustrophedon_demos.tex
 
       - name: Build template
-        run: TEXINPUTS=".:$GITHUB_WORKSPACE//:" xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_template.tex
+        working-directory: examples
+        run: xelatex -interaction=nonstopmode -halt-on-error boustrophedon_template.tex
