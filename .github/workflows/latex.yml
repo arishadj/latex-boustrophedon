@@ -11,26 +11,42 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6
 
-      - name: Build package documentation and examples
-        uses: xu-cheng/texlive-action@v3
+      - name: Install TeX Live packages
+        uses: zauguin/install-texlive@v4
         with:
-          texlive_version: latest
-          scheme: full
-          run: |
-            fail_with_log() {
-              log_file="$1"
-              message="$(grep -m 1 -E '^!|LaTeX Error|Fatal error|Emergency stop|not found' "$log_file" || true)"
-              if [ -z "$message" ]; then
-                message="LaTeX build failed; see the workflow log."
-              fi
-              echo "::error::$message"
-              cat "$log_file"
-              exit 1
-            }
+          packages: >
+            scheme-basic
+            latex
+            latex-bin
+            xetex
+            fontspec
+            l3kernel
+            l3packages
+            graphics
+            iftex
+            geometry
+            tools
+            collection-latexrecommended
+            collection-latexextra
+            collection-fontsrecommended
+            archaic
 
-            latex -interaction=nonstopmode -halt-on-error boustrophedon.ins || fail_with_log boustrophedon.log
-            xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx || fail_with_log boustrophedon.log
-            cp boustrophedon.sty examples/
-            cd examples
-            xelatex -interaction=nonstopmode -halt-on-error boustrophedon_demos.tex || fail_with_log boustrophedon_demos.log
-            xelatex -interaction=nonstopmode -halt-on-error boustrophedon_template.tex || fail_with_log boustrophedon_template.log
+      - name: Build package documentation and examples
+        run: |
+          fail_with_log() {
+            log_file="$1"
+            message="$(grep -m 1 -E '^!|LaTeX Error|Fatal error|Emergency stop|not found' "$log_file" || true)"
+            if [ -z "$message" ]; then
+              message="LaTeX build failed; see the workflow log."
+            fi
+            echo "::error::$message"
+            cat "$log_file"
+            exit 1
+          }
+
+          latex -interaction=nonstopmode -halt-on-error boustrophedon.ins || fail_with_log boustrophedon.log
+          xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx || fail_with_log boustrophedon.log
+          cp boustrophedon.sty examples/
+          cd examples
+          xelatex -interaction=nonstopmode -halt-on-error boustrophedon_demos.tex || fail_with_log boustrophedon_demos.log
+          xelatex -interaction=nonstopmode -halt-on-error boustrophedon_template.tex || fail_with_log boustrophedon_template.log
