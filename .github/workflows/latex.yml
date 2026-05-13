@@ -23,7 +23,7 @@ jobs:
         run: xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx
 
       - name: Build demo
-        run: xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_demos.tex
+        run: TEXINPUTS=".:$GITHUB_WORKSPACE//:" xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_demos.tex
 
       - name: Build template
-        run: xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_template.tex
+        run: TEXINPUTS=".:$GITHUB_WORKSPACE//:" xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_template.tex
