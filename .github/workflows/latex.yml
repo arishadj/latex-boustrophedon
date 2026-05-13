@@ -17,9 +17,20 @@ jobs:
           texlive_version: latest
           scheme: full
           run: |
-            latex -interaction=nonstopmode -halt-on-error boustrophedon.ins
-            xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx
+            fail_with_log() {
+              log_file="$1"
+              message="$(grep -m 1 -E '^!|LaTeX Error|Fatal error|Emergency stop|not found' "$log_file" || true)"
+              if [ -z "$message" ]; then
+                message="LaTeX build failed; see the workflow log."
+              fi
+              echo "::error::$message"
+              cat "$log_file"
+              exit 1
+            }
+
+            latex -interaction=nonstopmode -halt-on-error boustrophedon.ins || fail_with_log boustrophedon.log
+            xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx || fail_with_log boustrophedon.log
             cp boustrophedon.sty examples/
             cd examples
-            xelatex -interaction=nonstopmode -halt-on-error boustrophedon_demos.tex
-            xelatex -interaction=nonstopmode -halt-on-error boustrophedon_template.tex
+            xelatex -interaction=nonstopmode -halt-on-error boustrophedon_demos.tex || fail_with_log boustrophedon_demos.log
+            xelatex -interaction=nonstopmode -halt-on-error boustrophedon_template.tex || fail_with_log boustrophedon_template.log
