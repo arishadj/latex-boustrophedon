@@ -32,13 +32,24 @@ jobs:
 
       - name: Build package documentation and examples
         run: |
+          fail_ci() {
+            echo "::error file=.github/workflows/latex.yml,line=32::$1"
+            exit 1
+          }
+
+          command -v latex || fail_ci "latex executable not found after TeX Live installation"
+          command -v xelatex || fail_ci "xelatex executable not found after TeX Live installation"
+          for tex_file in article.cls ltxdoc.cls xparse.sty expl3.sty graphicx.sty iftex.sty geometry.sty fontspec.sty greek6cbc.sty greek4cbc.sty; do
+            kpsewhich "$tex_file" || fail_ci "$tex_file not found after TeX Live installation"
+          done
+
           fail_with_log() {
             log_file="$1"
             message="$(grep -m 1 -E '^!|LaTeX Error|Fatal error|Emergency stop|not found' "$log_file" || true)"
             if [ -z "$message" ]; then
               message="LaTeX build failed; see the workflow log."
             fi
-            echo "::error::$message"
+            echo "::error file=.github/workflows/latex.yml,line=43::$message"
             cat "$log_file"
             exit 1
           }
