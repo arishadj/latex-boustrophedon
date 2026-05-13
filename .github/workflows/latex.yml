@@ -14,7 +14,7 @@ jobs:
       - name: Install TeX Live packages
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-extra texlive-lang-greek
+          sudo apt-get install -y texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-lang-greek fonts-dejavu-core
 
       - name: Generate package from docstrip installer
         run: latex -interaction=nonstopmode -halt-on-error boustrophedon.ins
