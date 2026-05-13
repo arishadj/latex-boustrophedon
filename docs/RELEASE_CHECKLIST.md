@@ -8,6 +8,7 @@ Use this checklist for the actual v1 release pass.
 - [ ] `README.md` matches the implemented API.
 - [ ] `CHANGELOG.md` includes the release date.
 - [ ] `LICENSE` is present.
+- [ ] `NOTICE` is present.
 - [ ] `VERSION` is `1.0.0`.
 - [ ] `CITATION.cff` repository URL has been updated.
 - [ ] Demo and template PDFs are regenerated from the release folder.

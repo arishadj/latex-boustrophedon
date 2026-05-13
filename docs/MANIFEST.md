@@ -12,6 +12,7 @@ This folder contains the proposed Boustrophidon v1 release package.
 - `CHANGELOG.md` - Version history.
 - `RELEASE_NOTES_v1.0.0.md` - Human-readable release summary.
 - `LICENSE` - License declaration.
+- `NOTICE` - Package copyright, maintainer, and LPPL status.
 - `CONTRIBUTING.md` - Contribution guidelines.
 - `SECURITY.md` - Security/contact policy.
 

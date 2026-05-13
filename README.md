@@ -56,6 +56,10 @@ In TeXStudio, compile with **XeLaTeX**. The demo and template include these magi
 - XeLaTeX or LuaLaTeX recommended (Greek Unicode works best)
 - LaTeX packages: `xparse`, `expl3`, `graphicx`, `iftex`, `greek6cbc`, `greek4cbc`
 
+## License
+
+Boustrophidon is distributed under the LaTeX Project Public License, version 1.3c or later. See `LICENSE` and `NOTICE`.
+
 ## Quick start
 
 ```tex
