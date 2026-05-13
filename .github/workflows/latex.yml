@@ -9,34 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Install TeX Live packages
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-lang-greek fonts-dejavu-core
-
-      - name: Generate package from docstrip installer
-        run: latex -interaction=nonstopmode -halt-on-error boustrophedon.ins
-
-      - name: Build package manual
-        run: xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx
-
-      - name: Prepare example builds
-        run: cp boustrophedon.sty examples/
-
-      - name: Build demo
-        working-directory: examples
-        run: |
-          xelatex -interaction=nonstopmode -halt-on-error boustrophedon_demos.tex || {
-            cat boustrophedon_demos.log
-            exit 1
-          }
-
-      - name: Build template
-        working-directory: examples
-        run: |
-          xelatex -interaction=nonstopmode -halt-on-error boustrophedon_template.tex || {
-            cat boustrophedon_template.log
-            exit 1
-          }
+      - name: Build package documentation and examples
+        uses: xu-cheng/texlive-action@v3
+        with:
+          texlive_version: 2026
+          scheme: full
+          run: |
+            latex -interaction=nonstopmode -halt-on-error boustrophedon.ins
+            xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx
+            cp boustrophedon.sty examples/
+            cd examples
+            xelatex -interaction=nonstopmode -halt-on-error boustrophedon_demos.tex
+            xelatex -interaction=nonstopmode -halt-on-error boustrophedon_template.tex
