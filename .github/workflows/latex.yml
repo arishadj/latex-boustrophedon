@@ -15,19 +15,12 @@ jobs:
         uses: zauguin/install-texlive@v4
         with:
           packages: >
-            scheme-basic
-            latex
-            latex-bin
+            scheme-medium
             xetex
             fontspec
-            l3kernel
-            l3packages
-            graphics
-            iftex
+            xparse
             geometry
-            tools
-            lm
-            unicode-data
+            iftex
             archaic
 
       - name: Build package documentation and examples
