@@ -11,16 +11,23 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6
 
-      - name: Build package documentation and examples
+      - name: Build package documentation
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: boustrophedon.dtx
+          compiler: xelatex
+          args: -interaction=nonstopmode -halt-on-error
+          pre_compile: |
+            latex -interaction=nonstopmode -halt-on-error boustrophedon.ins
+
+      - name: Build package examples
         uses: xu-cheng/latex-action@v4
         with:
           root_file: |
-            boustrophedon.dtx
             examples/boustrophedon_demos.tex
             examples/boustrophedon_template.tex
           work_in_root_file_dir: true
           compiler: xelatex
           args: -interaction=nonstopmode -halt-on-error
           pre_compile: |
-            latex -interaction=nonstopmode -halt-on-error boustrophedon.ins
-            cp boustrophedon.sty examples/
+            cp ../boustrophedon.sty .
