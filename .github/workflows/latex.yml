@@ -17,9 +17,17 @@ jobs:
           texlive_version: latest
           scheme: full
           run: |
+            set -x
             latex -interaction=nonstopmode -halt-on-error boustrophedon.ins
             xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx
             head -20 boustrophedon.sty
             export TEXINPUTS=".:$PWD//:"
-            xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_demos.tex
-            xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_template.tex
+            rm -f examples/boustrophedon.sty
+            xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_demos.tex || {
+              cat examples/boustrophedon_demos.log
+              exit 1
+            }
+            xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_template.tex || {
+              cat examples/boustrophedon_template.log
+              exit 1
+            }
