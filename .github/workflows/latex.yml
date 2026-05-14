@@ -26,8 +26,5 @@ jobs:
           root_file: |
             examples/boustrophedon_demos.tex
             examples/boustrophedon_template.tex
-          work_in_root_file_dir: true
           compiler: xelatex
           args: -interaction=nonstopmode -halt-on-error
-          pre_compile: |
-            cp ../boustrophedon.sty .
