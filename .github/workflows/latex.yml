@@ -29,9 +29,9 @@ jobs:
       - name: Build package examples
         uses: xu-cheng/latex-action@v4
         with:
+          working_directory: examples
           root_file: |
-            examples/boustrophedon_demos.tex
-            examples/boustrophedon_template.tex
-          work_in_root_file_dir: true
+            boustrophedon_demos.tex
+            boustrophedon_template.tex
           compiler: xelatex
           args: -interaction=nonstopmode -halt-on-error
