@@ -19,6 +19,7 @@ jobs:
           run: |
             latex -interaction=nonstopmode -halt-on-error boustrophedon.ins
             xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx
-            cp boustrophedon.sty examples/
+            head -20 boustrophedon.sty
+            export TEXINPUTS=".:$PWD//:"
             xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_demos.tex
             xelatex -interaction=nonstopmode -halt-on-error -output-directory=examples examples/boustrophedon_template.tex
