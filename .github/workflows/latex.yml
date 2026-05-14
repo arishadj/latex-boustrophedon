@@ -11,45 +11,35 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6
 
-      - name: Install TeX Live packages
-        uses: zauguin/install-texlive@v4
-        with:
-          packages: >
-            scheme-medium
-            xetex
-            fontspec
-            xparse
-            geometry
-            iftex
-            archaic
-
       - name: Build package documentation and examples
         run: |
-          fail_ci() {
-            echo "::error file=.github/workflows/latex.yml,line=32::$1"
-            exit 1
-          }
+          docker run --rm -v "$PWD":/work -w /work ghcr.io/xu-cheng/texlive-debian:latest sh -c '
+            fail_ci() {
+              echo "::error file=.github/workflows/latex.yml,line=16::$1"
+              exit 1
+            }
 
-          command -v latex || fail_ci "latex executable not found after TeX Live installation"
-          command -v xelatex || fail_ci "xelatex executable not found after TeX Live installation"
-          for tex_file in article.cls ltxdoc.cls xparse.sty expl3.sty graphicx.sty iftex.sty geometry.sty fontspec.sty greek6cbc.sty greek4cbc.sty; do
-            kpsewhich "$tex_file" || fail_ci "$tex_file not found after TeX Live installation"
-          done
+            fail_with_log() {
+              log_file="$1"
+              message="$(grep -m 1 -E "^!|LaTeX Error|Fatal error|Emergency stop|not found" "$log_file" || true)"
+              if [ -z "$message" ]; then
+                message="LaTeX build failed; see the workflow log."
+              fi
+              echo "::error file=.github/workflows/latex.yml,line=27::$message"
+              cat "$log_file"
+              exit 1
+            }
 
-          fail_with_log() {
-            log_file="$1"
-            message="$(grep -m 1 -E '^!|LaTeX Error|Fatal error|Emergency stop|not found' "$log_file" || true)"
-            if [ -z "$message" ]; then
-              message="LaTeX build failed; see the workflow log."
-            fi
-            echo "::error file=.github/workflows/latex.yml,line=43::$message"
-            cat "$log_file"
-            exit 1
-          }
+            command -v latex || fail_ci "latex executable not found in TeX Live container"
+            command -v xelatex || fail_ci "xelatex executable not found in TeX Live container"
+            for tex_file in article.cls ltxdoc.cls xparse.sty expl3.sty graphicx.sty iftex.sty geometry.sty fontspec.sty greek6cbc.sty greek4cbc.sty; do
+              kpsewhich "$tex_file" || fail_ci "$tex_file not found in TeX Live container"
+            done
 
-          latex -interaction=nonstopmode -halt-on-error boustrophedon.ins || fail_with_log boustrophedon.log
-          xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx || fail_with_log boustrophedon.log
-          cp boustrophedon.sty examples/
-          cd examples
-          xelatex -interaction=nonstopmode -halt-on-error boustrophedon_demos.tex || fail_with_log boustrophedon_demos.log
-          xelatex -interaction=nonstopmode -halt-on-error boustrophedon_template.tex || fail_with_log boustrophedon_template.log
+            latex -interaction=nonstopmode -halt-on-error boustrophedon.ins || fail_with_log boustrophedon.log
+            xelatex -interaction=nonstopmode -halt-on-error boustrophedon.dtx || fail_with_log boustrophedon.log
+            cp boustrophedon.sty examples/
+            cd examples
+            xelatex -interaction=nonstopmode -halt-on-error boustrophedon_demos.tex || fail_with_log boustrophedon_demos.log
+            xelatex -interaction=nonstopmode -halt-on-error boustrophedon_template.tex || fail_with_log boustrophedon_template.log
+          '
