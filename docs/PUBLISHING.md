@@ -79,8 +79,8 @@ Open a fresh clone/download of the release archive and compile the examples once
 
 ## 7. Prepare CTAN Upload
 
-Prepare a separate CTAN archive without generated package files or generated
-example PDFs:
+Prepare a separate CTAN archive without generated package files. Include the
+compiled example PDFs so CTAN can preserve the demonstrated output:
 
 ```text
 boustrophedon/
@@ -93,7 +93,9 @@ boustrophedon/
   boustrophedon.pdf
   examples/
     boustrophedon_demos.tex
+    boustrophedon_demos.pdf
     boustrophedon_template.tex
+    boustrophedon_template.pdf
 ```
 
 Test the CTAN archive from a fresh temporary directory before uploading.

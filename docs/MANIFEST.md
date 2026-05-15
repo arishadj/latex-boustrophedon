@@ -28,8 +28,8 @@ This file describes the Boustrophedon release package.
 
 ## CTAN Upload
 
-The CTAN upload archive should include the source files and manual, but not
-generated package or example output files:
+The CTAN upload archive should include the source files, manual, and compiled
+example PDFs, but not generated package files:
 
 - `README.md`
 - `LICENSE`
@@ -39,7 +39,9 @@ generated package or example output files:
 - `boustrophedon.ins`
 - `boustrophedon.pdf`
 - `examples/boustrophedon_template.tex`
+- `examples/boustrophedon_template.pdf`
 - `examples/boustrophedon_demos.tex`
+- `examples/boustrophedon_demos.pdf`
 
 Do not include `boustrophedon.sty` in the CTAN upload archive; it is generated
 from `boustrophedon.dtx` by `boustrophedon.ins`.

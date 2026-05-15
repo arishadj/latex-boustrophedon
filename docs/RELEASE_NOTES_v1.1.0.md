@@ -56,6 +56,8 @@ The CTAN upload archive should include:
 - `boustrophedon.ins`
 - `boustrophedon.pdf`
 - `examples/boustrophedon_demos.tex`
+- `examples/boustrophedon_demos.pdf`
 - `examples/boustrophedon_template.tex`
+- `examples/boustrophedon_template.pdf`
 
-It should not include generated `boustrophedon.sty` or generated example PDFs.
+It should not include generated `boustrophedon.sty`.

@@ -17,8 +17,8 @@ CTAN is the long-term publication route for a LaTeX package. GitHub can host the
 
 CTAN prefers a browsing-friendly source archive. Because this package uses
 `.dtx`/`.ins`, the CTAN upload should not include generated package files such
-as `boustrophedon.sty`, or generated example PDFs. The package manual PDF is
-included because it is the user-facing documentation.
+as `boustrophedon.sty`. The package manual PDF and compiled example PDFs are
+included because they are user-facing documentation/example outputs.
 
 ```text
 boustrophedon/
@@ -31,17 +31,18 @@ boustrophedon/
   boustrophedon.pdf
   examples/
     boustrophedon_demos.tex
+    boustrophedon_demos.pdf
     boustrophedon_template.tex
+    boustrophedon_template.pdf
 ```
 
 ## GitHub Release Bundle
 
-The GitHub release may additionally include convenience/generated files:
+The GitHub release may additionally include the convenience/generated package
+file:
 
 ```text
 boustrophedon.sty
-examples/boustrophedon_demos.pdf
-examples/boustrophedon_template.pdf
 ```
 
 ## CTAN Upload Metadata Draft

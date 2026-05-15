@@ -43,9 +43,8 @@ Use this checklist for each release pass.
 
 ## CTAN
 
-- [ ] CTAN archive contains source/manual files only.
+- [ ] CTAN archive contains source files, manual, and compiled example PDFs.
 - [ ] CTAN archive excludes `boustrophedon.sty`.
-- [ ] CTAN archive excludes generated example PDFs.
 - [ ] CTAN archive extracts into a single top-level `boustrophedon/` folder.
 - [ ] CTAN archive tested from a fresh temporary directory.
 - [ ] CTAN upload metadata includes repository and issue tracker URLs.

@@ -1,4 +1,4 @@
-﻿# Boustrophedon (LaTeX)
+# Boustrophedon (LaTeX)
 
 ## LaTeX Package
 

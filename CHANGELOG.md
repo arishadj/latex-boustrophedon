@@ -18,7 +18,7 @@ All notable changes to Boustrophedon are documented here.
 - Public package file renamed to `boustrophedon.sty`.
 - Public command renamed to `\boustrophedon[<keys>]{<text>}`.
 - Start/stop API renamed to `\startBoustrophedon[<keys>] ... \stopBoustrophedon`.
-- Package metadata updated for the v1.1 documented-source distribution.
+- Package metadata updated for the v1.1.0 documented-source distribution.
 - Release documentation refreshed for GitHub and CTAN-oriented publication.
 
 ## [1.0.0] - 2026-05-13
